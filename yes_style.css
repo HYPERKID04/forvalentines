@@ -1,0 +1,88 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #fad0c4, #ff9a9e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 35px;
+  max-width: 800px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header_text {
+  font-size: 3em;
+  color: #e91e63;
+}
+
+#typewriter {
+  font-size: 1.4em;
+  color: #444;
+  margin: 25px auto;
+  max-width: 700px;
+}
+
+/* Slideshow */
+.slideshow {
+  margin: 30px auto;
+}
+
+.slideshow img {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: opacity 0.5s ease;
+}
+
+#caption {
+  margin-top: 12px;
+  font-size: 1.2em;
+  color: #d81b60;
+}
+
+/* Proposal */
+.proposal {
+  margin-top: 35px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 1.2s ease;
+}
+
+.proposal h2 {
+  font-size: 2.2em;
+  color: #c2185b;
+}
+
+/* Floating hearts */
+.hearts::before {
+  content: "💖 💕 💗 💓 💘";
+  position: fixed;
+  font-size: 3.5em;
+  animation: floatHearts 10s infinite linear;
+  opacity: 0.25;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(110vh); }
+  to { transform: translateY(-120vh); }
+}
+
+/* GIF */
+.gif_container img {
+  max-width: 350px;
+  border-radius: 20px;
+  margin-top: 20px;
+}

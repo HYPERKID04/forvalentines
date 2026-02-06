@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Said Yes 💖</title>
+  <link rel="stylesheet" href="yes_style.css">
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/14/audio_7e6f7b63b3.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
+
+  <div class="container">
+    <h1 class="header_text">I knew you would say yes 💕</h1>
+
+    <!-- Typewriter text -->
+    <p id="typewriter"></p>
+
+    <!-- Slideshow -->
+    <div class="slideshow">
+      <img id="slide" src="photos/photo1.jpg" alt="Her photo">
+      <p id="caption">My favorite smile 💖</p>
+    </div>
+
+    <!-- Hidden proposal -->
+    <div id="proposal" class="proposal">
+      <h2>Will you be mine forever? 💍</h2>
+      <p>You are my today, my tomorrow, my everything.</p>
+    </div>
+
+    <!-- Final gif -->
+    <div class="gif_container">
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
+    </div>
+  </div>
+
+  <script>
+    /* TYPEWRITER */
+    const text = "From the moment you came into my life, everything felt warmer, brighter, and better. Loving you is my favorite thing in the world 💖";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 45);
+      }
+    }
+    typeWriter();
+
+    /* SLIDESHOW */
+    const photos = [
+      { src: "photos/photo1.jpg", caption: "My favorite smile 💕" },
+      { src: "photos/photo2.jpg", caption: "This moment lives in my heart 🥹" },
+      { src: "photos/photo3.jpg", caption: "How are you even real 😍" },
+      { src: "photos/photo4.jpg", caption: "Forever looks good on you 💖" }
+    ];
+
+    let index = 0;
+    const slide = document.getElementById("slide");
+    const caption = document.getElementById("caption");
+
+    setInterval(() => {
+      index = (index + 1) % photos.length;
+      slide.style.opacity = 0;
+
+      setTimeout(() => {
+        slide.src = photos[index].src;
+        caption.textContent = photos[index].caption;
+        slide.style.opacity = 1;
+      }, 500);
+    }, 3500);
+
+    /* PROPOSAL REVEAL */
+    setTimeout(() => {
+      document.getElementById("proposal").style.opacity = 1;
+      document.getElementById("proposal").style.transform = "scale(1)";
+    }, 14000);
+  </script>
+
+</body>
+</html>
